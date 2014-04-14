@@ -5,9 +5,9 @@
 	
 	<bean id="directoryRoot" class="core.fileSystem.Directory"/>
 	
-	<bean id="directoryScaner" class="core.fileSystem.DirectoryScaner" init-method="scan">
+	<bean id="directoryScaner" class="core.fileSystem.VirtualDirectoryScaner" init-method="scan">
 		<property name="directoryRoot" ref="directoryRoot"/>
-		<property name="nativePath" value="res/"/>
+		<property name="path" value="fs.fs"/>
 		<property name="scope" value="directoryScaner"/>
 	</bean>
 	
@@ -16,9 +16,11 @@
 		<property name="loadingService" ref="fileLoadingService"/>
 		<describeEvent scopeName="directoryScaner" type="complete" handler="onScanComplete" />
 	</bean> 
+
 	
-	<bean id="fileLoadingService" class="core.services.FileLoadingService" init-method="initialize">
+	<bean id="fileLoadingService" class="core.services.FileDecodeService" init-method="initialize">
 		<property name="fileDecoderFactory" ref="fileDecoder"/>
 	</bean>
+	
 	
 </beans>
