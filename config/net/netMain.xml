@@ -91,8 +91,11 @@
 		<lookup-method name="addPacket" ref="removeShipPacket"/>
 	</bean>
 		
-	<bean id="ConnectionManager" class="core.net.ConnectionManager">
+	<bean id="ConnectionManager" class="core.net.ConnectionManager" init-method="connect">
+		<property name="server" value="PLANETVEGETA"/>
+		<property name="port" value="8881"/>
 		<property name="dataReader" ref="dataReader"/>
+		<property name="sceneController" ref="sceneController"/>
 	</bean>
 	
 	<bean id="PingSender" class="net.PingSender">
