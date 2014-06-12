@@ -11,6 +11,8 @@
 	<bean id="hangar" class="gameui.hangar.HangarScene"/>
 	<bean id="gameScene" class="gameui.gamescene.GameScene"/>
 	<bean id="connectionErrorScene" class="gameui.connectionError.ConnectionErrorScene"/>
+	<bean id="adminPanelScene" class="gameui.adminPanel.AdminPanelScene"/>
+	<bean id="radarScene" class="gameui.radarTestScene.RadarScene"/>
 
 	
 </beans>

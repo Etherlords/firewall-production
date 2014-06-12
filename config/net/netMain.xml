@@ -15,6 +15,7 @@
 		<lookup-method name="addEventListener" ref="shipStatusUpdateEventListener"/>
 		<lookup-method name="addEventListener" ref="applyDamageEventListener"/>
 		<lookup-method name="addEventListener" ref="removeShipEventListener"/>
+		<lookup-method name="addEventListener" ref="loginBaseEditPacketEventListener"/>
 	</bean>
 		
 	<bean id="LoginEventListener" class="net.events.LoginAnswerEventListener">
@@ -63,6 +64,11 @@
 		<property name="playersDataStore" ref="playersDataStore"/>
 	</bean>
 	
+	<bean id="loginBaseEditPacketEventListener" class="net.events.LoginBaseEditPacketEventListener">
+		<property name="type" value="15"/>
+		<property name="playerDataModel" ref="playerDataModel"/>
+	</bean>
+	
 	<!-- events/ events routing -->
 
 	<!-- services -->
@@ -89,6 +95,7 @@
 		<lookup-method name="addPacket" ref="shipStatusPacket"/>
 		<lookup-method name="addPacket" ref="applyDamagePacket"/>
 		<lookup-method name="addPacket" ref="removeShipPacket"/>
+		<lookup-method name="addPacket" ref="loginBaseEditPacket"/>
 	</bean>
 		
 	<bean id="ConnectionManager" class="core.net.ConnectionManager" init-method="connect">
