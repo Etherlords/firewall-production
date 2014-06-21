@@ -99,8 +99,8 @@
 	</bean>
 		
 	<bean id="ConnectionManager" class="core.net.ConnectionManager" init-method="connect">
-		<!---><property name="server" value="(String)95.85.42.58"/><!---->
-		<!----><property name="server" value="localhost"/><!---->
+		<!----><property name="server" value="(String)95.85.42.58"/><!---->
+		<!---><property name="server" value="localhost"/><!---->
 		<property name="port" value="8881"/>
 		<property name="dataReader" ref="dataReader"/>
 		<property name="sceneController" ref="sceneController"/>
