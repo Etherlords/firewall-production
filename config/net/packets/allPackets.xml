@@ -12,4 +12,5 @@
 	<import resource="applyDamage.xml"/>
 	<import resource="removeShip.xml"/>
 	<import resource="loginBaseEditPacket.xml"/>
+	<import resource="useSkill.xml"/>
 </beans>
