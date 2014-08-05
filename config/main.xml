@@ -6,6 +6,7 @@
 	
 	<eventScope name="global"/>
 	
+	
 	<bean id="playerDataModel" class="core.datavalue.model.ObjectProxy">
 		<property name="isSetSameValue" value="false"/>
 		<property name="autoUpdate" value="true"/>

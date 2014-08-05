@@ -13,4 +13,6 @@
 	<import resource="removeShip.xml"/>
 	<import resource="loginBaseEditPacket.xml"/>
 	<import resource="useSkill.xml"/>
+	<import resource="shipStatusPackets.xml"/>
+	<import resource="debug.xml"/>
 </beans>

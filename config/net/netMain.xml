@@ -17,6 +17,9 @@
 		<lookup-method name="addEventListener" ref="removeShipEventListener"/>
 		<lookup-method name="addEventListener" ref="loginBaseEditPacketEventListener"/>
 		<lookup-method name="addEventListener" ref="useSkillEventListener"/>
+		<lookup-method name="addEventListener" ref="shipMoveStatusEventListener"/>
+		<lookup-method name="addEventListener" ref="shipRotationStatusUpdateEventListener"/>
+		<lookup-method name="addEventListener" ref="correctionEventListener"/>
 	</bean>
 		
 	<bean id="LoginEventListener" class="net.events.LoginAnswerEventListener">
@@ -75,6 +78,25 @@
 		<property name="playersDataStore" ref="playersDataStore"/>
 	</bean>
 	
+	<bean id="shipMoveStatusEventListener" class="net.events.ShipMoveStatusUpdateEventListener">
+		<property name="type" value="17"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+	</bean>
+	
+	<bean id="shipRotationStatusUpdateEventListener" class="net.events.ShipRotationStatusUpdateEventListener">
+		<property name="type" value="18"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+		<property name="worldTime" ref="worldTime"/>
+	</bean>
+	
+	<bean id="correctionEventListener" class="net.events.CorrectionEventListener">
+		<property name="type" value="19"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+		<property name="worldTime" ref="worldTime"/>
+	</bean>
+	
+	
+	
 	<!-- events/ events routing -->
 
 	<!-- services -->
@@ -103,11 +125,14 @@
 		<lookup-method name="addPacket" ref="removeShipPacket"/>
 		<lookup-method name="addPacket" ref="loginBaseEditPacket"/>
 		<lookup-method name="addPacket" ref="useSkillPacket"/>
+		<lookup-method name="addPacket" ref="shipMoveStatusPacket"/>
+		<lookup-method name="addPacket" ref="shipRotationStatusPacket"/>
+		<lookup-method name="addPacket" ref="debugPacket"/>
 	</bean>
 		
 	<bean id="ConnectionManager" class="core.net.ConnectionManager" init-method="connect">
 		<!----><property name="server" value="(String)95.85.42.58"/><!---->
-		<!---><property name="server" value="localhost"/><!---->
+		<!---><property name="server" value="PLANETVEGETA"/><!--->
 		<property name="port" value="8881"/>
 		<property name="dataReader" ref="dataReader"/>
 		<property name="sceneController" ref="sceneController"/>
