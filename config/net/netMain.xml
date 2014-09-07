@@ -2,7 +2,7 @@
 	<import resource="readers/readers.xml"/>
 	<import resource="packets/allPackets.xml"/>
 	
-	<bean id="playersDataStore" class="data.PlayersDataStore"/>
+	<bean id="playersDataStore" class="core.game.data.PlayersDataStore"/>
 	
 	<!-- events/ events routing -->
 	<bean id="SocketDataRouter" class="net.events.SocketDataEventRouter">
@@ -20,11 +20,14 @@
 		<lookup-method name="addEventListener" ref="shipMoveStatusEventListener"/>
 		<lookup-method name="addEventListener" ref="shipRotationStatusUpdateEventListener"/>
 		<lookup-method name="addEventListener" ref="correctionEventListener"/>
+		<lookup-method name="addEventListener" ref="userInfoEventListener"/>
+		<lookup-method name="addEventListener" ref="shopItemsEventListener"/>
+		<lookup-method name="addEventListener" ref="deathEventListener"/>
 	</bean>
 		
 	<bean id="LoginEventListener" class="net.events.LoginAnswerEventListener">
 		<property name="type" value="2"/>
-		<property name="playerData" ref="playerDataModel"/>
+		<property name="playerDataStore" ref="playerDataStore"/>
 	</bean>
 	
 	<bean id="ChatMesasgeEventListener" class="net.events.ChatMessageEventListener">
@@ -76,6 +79,7 @@
 	<bean id="useSkillEventListener" class="net.events.UseSkillEventListener">
 		<property name="type" value="16"/>
 		<property name="playersDataStore" ref="playersDataStore"/>
+		<property name="weaponEffectFactory" ref="weaponEffectFactory"/>
 	</bean>
 	
 	<bean id="shipMoveStatusEventListener" class="net.events.ShipMoveStatusUpdateEventListener">
@@ -93,6 +97,23 @@
 		<property name="type" value="19"/>
 		<property name="playersDataStore" ref="playersDataStore"/>
 		<property name="worldTime" ref="worldTime"/>
+	</bean>
+	
+	<bean id="shopItemsEventListener" class="net.events.ShopItemsEventListener">
+		<property name="type" value="21"/>
+		<property name="shopItemsList" ref="shopItemsList"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+	</bean>
+	
+	<bean id="userInfoEventListener" class="net.events.UserInfoEventListener">
+		<property name="type" value="22"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+	</bean>
+	
+	<bean id="deathEventListener" class="net.events.DeathEventListener">
+		<property name="type" value="25"/>
+		<property name="playersDataStore" ref="playersDataStore"/>
+		<property name="stage" ref="stage"/>
 	</bean>
 	
 	
@@ -128,11 +149,14 @@
 		<lookup-method name="addPacket" ref="shipMoveStatusPacket"/>
 		<lookup-method name="addPacket" ref="shipRotationStatusPacket"/>
 		<lookup-method name="addPacket" ref="debugPacket"/>
+		<lookup-method name="addPacket" ref="userInfoPacket"/>
+		<lookup-method name="addPacket" ref="shopItemsInfo"/>
+		<lookup-method name="addPacket" ref="deathPacket"/>
 	</bean>
 		
 	<bean id="ConnectionManager" class="core.net.ConnectionManager" init-method="connect">
-		<!----><property name="server" value="(String)95.85.42.58"/><!---->
-		<!---><property name="server" value="PLANETVEGETA"/><!--->
+		<!---><property name="server" value="(String)95.85.42.58"/><!---->
+		<!----><property name="server" value="PLANETVEGETA"/><!---->
 		<property name="port" value="8881"/>
 		<property name="dataReader" ref="dataReader"/>
 		<property name="sceneController" ref="sceneController"/>

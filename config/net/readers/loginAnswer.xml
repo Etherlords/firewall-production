@@ -4,7 +4,5 @@
 		<lookup-method ref="IntOperator" name="addSerializer"/>
 		<!-- status -->
 		<lookup-method ref="IntOperator" name="addSerializer"/>
-		 <!--rights-->
-		<lookup-method ref="IntOperator" name="addSerializer"/>
 	</bean>
 </beans>

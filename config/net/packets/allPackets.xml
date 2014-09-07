@@ -15,4 +15,9 @@
 	<import resource="useSkill.xml"/>
 	<import resource="shipStatusPackets.xml"/>
 	<import resource="debug.xml"/>
+	<import resource="userInfo.xml"/>
+	<import resource="shopItemsInfo.xml"/>
+	<import resource="shopItemOperation.xml"/>
+	<import resource="setTarget.xml"/>
+	<import resource="death.xml"/>
 </beans>

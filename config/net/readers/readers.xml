@@ -12,4 +12,5 @@
 	<bean class="core.external.io.PointOperator" id="PointOperator"/>
 	<bean class="core.external.io.UTFStringOperator" id="UTFStringOperator"/>
 	<bean class="core.external.io.Vector3DOperator" id="vector3DOperator"/>
+	<bean class="core.external.io.ArrayOperator" id="arrayOperator"/>
 </beans>
