@@ -81,7 +81,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'r','r','testnickname',NULL,3500,1000,NULL,NULL,'\0','3 3 1'),(3,'test2@mail.ru','testpwd2','testnickname2',NULL,0,0,NULL,NULL,'\0','\'\''),(4,'t','t','Asfel',NULL,36611,1111,1000,1,'\0','3 3 1 1 1 4'),(5,'temik','temik','temik',NULL,200,0,1000,1,'\0',NULL),(6,'asfel','asfel','Asfel',NULL,200,0,1000,1,'\0',NULL),(7,'alex','Alex010358','Alex',NULL,200,0,1000,1,'\0',NULL),(8,'niks','niks010358','niks',NULL,200,0,1000,1,'\0',NULL);
+INSERT INTO `user` VALUES (1,'r','r','testnickname',NULL,3500,1000,NULL,NULL,'\0','3 3 1'),(3,'test2@mail.ru','testpwd2','testnickname2',NULL,0,0,NULL,NULL,'\0','\'\''),(4,'t','t','Asfel',NULL,30861,1111,1000,1,'\0','3 3 1 1 1 4 3 7 7 7 7 7 4 4 4'),(5,'temik','temik','temik',NULL,200,0,1000,1,'\0','\'\''),(6,'asfel','asfel','Asfel',NULL,200,0,1000,1,'\0','\'\''),(7,'alex','Alex010358','Alex',NULL,200,0,1000,1,'\0','\'\''),(8,'niks','niks010358','niks',NULL,200,0,1000,1,'\0','\'\'');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -94,4 +94,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-07 16:26:10
+-- Dump completed on 2014-09-07 19:37:06
