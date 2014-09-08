@@ -72,7 +72,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `email` (`email`),
   KEY `nickname` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,7 +81,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'r','r','testnickname',NULL,3500,1000,NULL,NULL,'\0','3 3 1'),(3,'test2@mail.ru','testpwd2','testnickname2',NULL,0,0,NULL,NULL,'\0','\'\''),(4,'t','t','Asfel',NULL,30861,1111,1000,1,'\0','3 3 1 1 1 4 3 7 7 7 7 7 4 4 4'),(5,'temik','temik','temik',NULL,200,0,1000,1,'\0','\'\''),(6,'asfel','asfel','Asfel',NULL,200,0,1000,1,'\0','\'\''),(7,'alex','Alex010358','Alex',NULL,200,0,1000,1,'\0','\'\''),(8,'niks','niks010358','niks',NULL,200,0,1000,1,'\0','\'\'');
+INSERT INTO `user` VALUES (1,'r','r','testnickname',NULL,3500,1000,NULL,NULL,'\0','3 3 1'),(3,'test2@mail.ru','testpwd2','testnickname2',NULL,0,0,NULL,NULL,'\0','\'\''),(4,'t','t','Asfel',NULL,30861,1111,1000,1,'\0','3 3 1 1 1 4 3 7 7 7 7 7 4 4 4'),(5,'temik','temik','temik',NULL,200,0,1000,1,'\0','\'\''),(6,'asfel','asfel','Asfel',NULL,200,0,1000,1,'\0','\'\''),(7,'alex','Alex010358','Alex',NULL,250,0,1000,1,'\0','\'\''),(8,'niks','niks010358','niks',NULL,250,0,1000,1,'\0','\'\''),(9,'acc1','acc1pass','Number1',NULL,250,0,1000,1,'\0','\'\''),(10,'acc2','acc2pass','Number2',NULL,250,0,1000,1,'\0','\'\''),(11,'acc3','acc3pass','Number3',NULL,250,0,1000,1,'\0','\'\''),(12,'acc4','acc4pass','Number4',NULL,250,0,1000,1,'\0','\'\''),(13,'acc5','acc5pass','Number5',NULL,250,0,1000,1,'\0','\'\'');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -94,4 +94,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-07 19:37:06
+-- Dump completed on 2014-09-08 15:55:50
